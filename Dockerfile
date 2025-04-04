@@ -1,6 +1,6 @@
 FROM rockylinux/rockylinux:9
 LABEL maintainer="Cloudwebsite"
-RUN yum -y install nginx
+RUN yum -y install httpd
 COPY index.html /var/www/html/
-ENTRYPOINT ["/usr/sbin/nginx", "-D", "FOREGROUND"]
+ENTRYPOINT ["/usr/sbin/httpd", "-D", "FOREGROUND"]
 EXPOSE 80
